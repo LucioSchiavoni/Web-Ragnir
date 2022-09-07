@@ -41,7 +41,7 @@ botonUsuarios.addEventListener("click", () => {
      <div class="card-content" id="usuario${indice}" style="max-width: 20rem; margin: 4px;">
         <div><h2>Bienvenido ${usuario.name}</h2></div>
         <div >
-            <p><b>Su registro fue aprovado con su mail:</b> ${usuario.email}</p>
+            <p><b>Su registro fue aprobado con su mail:</b> ${usuario.email}</p>
             <button class="btn btn-primary ">Eliminar</button>
         </div>
     </div>
