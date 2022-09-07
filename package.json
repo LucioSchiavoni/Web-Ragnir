@@ -1,0 +1,26 @@
+{
+  "name": "web-ragnir",
+  "version": "1.0.0",
+  "description": "Este es un proyecto de la UTU principalmente funciona como un template para ver como seria en fin de curso. Este lo hice yo pero la idea principal seria hacerlo con mi grupo.",
+  "main": "index.js",
+  "scripts": {
+    "build-css": "node-sass --include-path scss sass/style.scss style.css",
+    "watch-css": "nodemon -e scss -x \"npm run build-css\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LucioSchiavoni/Web-Ragnir.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LucioSchiavoni/Web-Ragnir/issues"
+  },
+  "homepage": "https://github.com/LucioSchiavoni/Web-Ragnir#readme",
+  "dependencies": {
+    "node-sass": "^7.0.1",
+    "nodemon": "^2.0.19"
+  },
+  "devDependencies": {}
+}

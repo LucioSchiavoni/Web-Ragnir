@@ -29,7 +29,20 @@ form.addEventListener("submit", (e) => {
     usuarios.push(usuario);
     localStorage.setItem("usuarios", JSON.stringify(usuarios));
     form.reset();
-
+    Toastify({
+        text: "Se registro con exito",
+        duration: 3000,
+        destination: "https://github.com/apvarun/toastify-js",
+        newWindow: true,
+        close: true,
+        gravity: "top",
+        position: "left",
+        stopOnFocus: true,
+        style: {
+            background: "linear-gradient(to right, #A90000, #000)",
+        },
+        onClick: function () { }
+    }).showToast();
 })
 
 
@@ -63,3 +76,29 @@ botonUsuarios.addEventListener("click", () => {
 
 
 });
+
+///Boton Dark mode
+
+const btnSwitch = document.querySelector("#switch");
+
+btnSwitch.addEventListener("click", () => {
+    document.body.classList.toggle("dark");
+    btnSwitch.classList.toggle("active");
+
+
+    //Lo guardamos en el localstorage
+
+    if (document.body.classList.contains("dark")) {
+        localStorage.setItem("dark-mode", "true");
+    } else {
+        localStorage.setItem("dark-mode", "false");
+    }
+});
+//El modo actual
+if (localStorage.getItem("dark-mode") === "true") {
+    document.body.classList.add("dark");
+    btnSwitch.classList.add("active");
+} else {
+    document.body.classList.remove("dark");
+    btnSwitch.classList.remove("active");
+}

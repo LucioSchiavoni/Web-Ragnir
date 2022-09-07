@@ -22,7 +22,7 @@ const fetchData = async () => {
         const data = await res.json();
         console.log(data);
         gamesId(data);
-
+        inputName(data);
 
     } catch (error) {
         console.log(error);
@@ -52,3 +52,20 @@ const gamesId = data => {
         games.innerHTML = elementos;
     })
 }
+
+
+const formJuegos = document.getElementById("formJuegos");
+const inputGames = document.getElementById("inputGames");
+const inputName = data => {
+    formJuegos.addEventListener("keyup", e => {
+        e.preventDefault();
+        const letraUser = inputGames.value.toLowerCase();
+        const arrayFilter = data.filter(item => {
+            const inputData = item.title.toLowerCase();
+            if (inputData.indexOf(letraUser) !== -1) {
+                return item;
+            };
+        });
+        gamesId(arrayFilter);
+    });
+};
